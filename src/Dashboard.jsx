@@ -17,7 +17,7 @@ const Dashboard = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('eve.json', { responseType: 'text' })
+    axios.get('/eve.json', { responseType: 'text' })
       .then((response) => {
         const lines = response.data.split('\n');
         const jsonData = lines.filter(line => line.trim() !== '').map(line => JSON.parse(line));
